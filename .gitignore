@@ -6,8 +6,11 @@ client/node_modules/
 # Environment Variables
 .env
 .env.*
+config/.env
 server/.env
 client/.env
+server/config.env/
+client/config.env
 
 # Build Outputs (React/Vite)
 dist/
