@@ -1,7 +1,14 @@
+import { Link } from 'react-router-dom';
+
 export default function Navbar() {
     return (
         <div>
-            <h1>Navbar</h1>
+            <ul>
+                <Link to="/">Home</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/register">Register</Link>
+                <Link to="/dashboard">Dashboard</Link>
+            </ul>
         </div>
     );
 }
