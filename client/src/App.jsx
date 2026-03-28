@@ -12,7 +12,8 @@ function App() {
         <ul>
           <Link to="/">Home</Link>
           <Link to="/login">Login</Link>
-          <Link to="/register">Refister</Link>
+          <Link to="/register">Register</Link>
+          <Link to="/dashboard">Dashboard</Link>
         </ul>
       </nav>
       <main>
