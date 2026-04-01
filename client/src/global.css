@@ -29,4 +29,15 @@
     /* Text */
     --font-primary: 'Manrope', sans-serif;
     --font-secondary: 'Inter', sans-serif;
+
+    /* -- Globals -- */
+    body {
+        font-family: var(--font-primary);
+        font-size: 16px;
+        color: var(--neutral-black);
+        background-color: var(--bg-light);
+        line-height: 1.6rem;
+        margin: 1rem;
+    }
+
 }
