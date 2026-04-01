@@ -1,18 +1,18 @@
 :root {
     /* Primary Color */
+    --primary-white:oklch(92% 0.02 160);
     --primary-light:oklch(87.1% 0.072 145);
+    --primary-light-mid:oklch(0.9027 0.103 139.1);
     --primary:oklch(54.1% 0.141 145);
+    --primary-2:oklch(45% 0.08 160);
+    --primary-dark-mid:oklch(35.2% 0.108 145);
     --primary-dark:oklch(27.4% 0.085 145);
+    --primary-black:oklch(20% 0.04 160);
 
     /* Secondary Color */
-    --secondary-light:oklch(92% 0.02 160);
-    --secondary:oklch(45% 0.08 160);
-    --secondary-dark:oklch(20% 0.04 160);
-
-    /* Tertiary Color */
-    --tertiary-light:oklch(92% 0.02 20);
-    --tertiary:oklch(45% 0.10 20);
-    --tertiary-dark:oklch(20% 0.04 20);
+    --secondary-light:oklch(92% 0.02 20);
+    --secondary:oklch(45% 0.10 20);
+    --secondary-dark:oklch(20% 0.04 20);
 
 
     /* Neutral Color */
@@ -35,7 +35,7 @@
         font-family: var(--font-primary);
         font-size: 1rem;
         color: var(--neutral-black);
-        background-color: var(--bg-light);
+        background-color: var(--neutral-light);
         line-height: 1.6rem;
         margin: 1rem;
     }
@@ -44,7 +44,6 @@
     h1, h2, h3, h4, h5, h6 {
         color: var(--primary-dark);
         font-weight: 800;
-        margin: 1rem 0;
     }
 
     h1 {
@@ -77,5 +76,60 @@
         margin: 1.5rem 0;
     }
 
+    /* - Paragraphs - */
+    p {
+        margin: 1.25rem 0;
+        font-weight: 400;
+    }
 
+    /* - Buttons - */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-primary);
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        border: 2px solid transparent;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: var(--primary-dark-mid);
+        color: var(--primary-white);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary);
+        box-shadow: 0 .25rem .75rem var(--neutral);
+    }
+
+    .btn-secondary {
+        background-color: var(--primary-light-mid);
+        color: var(--primary-dark)
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--primary);
+        box-shadow: 0 .25rem .75rem var(--neutral);
+        color: var(--primary-white);
+    }
+
+    .btn-outline {
+        background-color: var(--primary);
+    }
+
+    .btn-outline {
+        background: oklch(100% 0.00011 271.152 / 0.1);
+        backdrop-filter: blur(10px);
+        color: white;
+        border: 1px solid oklch(100% 0.00011 271.152 / 0.2);
+    }
+
+    .btn-outline:hover { 
+        background: oklch(100% 0.00011 271.152 / 0.2);
+    }
 }
