@@ -23,8 +23,8 @@
     --neutral-black:oklch(15.2% 0.010 220);
 
     /* Background */
-    --bg-light: var(--secondary-light);
-    --bg-dark: var(var(--secondary-dark));
+    --bg-light: var(--neutral-white);
+    --bg-dark: var(var(--neutral-dark));
 
     /* Text */
     --font-primary: 'Manrope', sans-serif;
@@ -35,9 +35,9 @@
         font-family: var(--font-primary);
         font-size: 1rem;
         color: var(--neutral-black);
-        background-color: var(--neutral-light);
+        background-color: var(--bg-light);
         line-height: 1.6rem;
-        margin: 1rem;
+        margin: 0 2rem;
     }
 
     section {
