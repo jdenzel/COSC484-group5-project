@@ -22,4 +22,11 @@
     --neutral-dark:oklch(22.4% 0.015 220);
     --neutral-black:oklch(15.2% 0.010 220);
 
+    /* Background */
+    --bg-light: var(--secondary-light);
+    --bg-dark: var(var(--secondary-dark));
+
+    /* Text */
+    --font-primary: 'Manrope', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
 }
