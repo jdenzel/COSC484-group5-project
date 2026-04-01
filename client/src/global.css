@@ -2,7 +2,7 @@
     /* Primary Color */
     --primary-light:oklch(87.1% 0.072 145);
     --primary:oklch(54.1% 0.141 145);
-    --primary-800:oklch(27.4% 0.085 145);
+    --primary-dark:oklch(27.4% 0.085 145);
 
     /* Secondary Color */
     --secondary-light:oklch(92% 0.02 160);
@@ -33,11 +33,47 @@
     /* -- Globals -- */
     body {
         font-family: var(--font-primary);
-        font-size: 16px;
+        font-size: 1rem;
         color: var(--neutral-black);
         background-color: var(--bg-light);
         line-height: 1.6rem;
         margin: 1rem;
     }
 
+    /* - Headings - */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--primary-dark);
+        font-weight: 800;
+        margin: 1rem 0;
+    }
+
+    h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+        margin: 2rem 0;
+    }
+
+    h2 {
+        font-size: 4rem;
+        line-height: 5rem;
+        margin: 1.5rem 0;
+    }
+
+    h3 {
+        font-size: 3rem;
+        line-height: 3rem;
+        margin: 1rem 0;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        margin: .5rem 0;
+    }
+
+    h5 {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin: .25rem 0;
+    }
 }

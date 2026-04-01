@@ -2,6 +2,11 @@ export default function Home() {
     return (
         <div>
             <h1>Home</h1>
+            <h2>Home</h2>
+            <h3>Home</h3>
+            <h4>Home</h4>
+            <h5>Home</h5>
+
         </div>
     );
 }
