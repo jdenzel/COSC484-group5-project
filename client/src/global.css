@@ -136,4 +136,10 @@
     .btn-outline:hover { 
         background: oklch(100% 0.00011 271.152 / 0.2);
     }
+    @media screen and (max-width: 768px) {
+        body {
+            margin: 0 1rem;
+        }
+    }
 }
+
