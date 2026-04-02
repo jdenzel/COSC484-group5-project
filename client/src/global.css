@@ -37,11 +37,10 @@
         color: var(--neutral-black);
         background-color: var(--bg-light);
         line-height: 1.6rem;
-        margin: 0 2rem;
     }
 
     section {
-        margin: 5rem 0;
+        margin: 0 2rem;
     }
 
     /* - Headings - */
@@ -137,7 +136,7 @@
         background: oklch(100% 0.00011 271.152 / 0.2);
     }
     @media screen and (max-width: 768px) {
-        body {
+        section {
             margin: 0 1rem;
         }
     }

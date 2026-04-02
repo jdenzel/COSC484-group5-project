@@ -5,6 +5,7 @@
     color: var(--neutral);
     font-weight: 700;
     border-bottom: 0.1em solid var(--neutral-light);
+    padding: 2rem 2rem;
 }
 
 .navbar h5 {
