@@ -3,7 +3,7 @@ import "./styles/Home.css"
 
 export default function Home() {
     return (
-        <section>
+        <section id="home">
             <div className="hero">
                 <div className="hero-description-container">
                     <h1>Finance Management</h1>
@@ -17,7 +17,10 @@ export default function Home() {
                     <img src={HeroImage} />
                 </div>
             </div>
-            
+
+            <div className="features">
+                <h3>F-T Features</h3>
+            </div>
         </section>
     );
 }

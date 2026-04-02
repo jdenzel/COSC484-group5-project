@@ -23,7 +23,7 @@
     --neutral-black:oklch(15.2% 0.010 220);
 
     /* Background */
-    --bg-light: var(--neutral-white);
+    --bg-light: var(--neutral-light);
     --bg-dark: var(var(--neutral-dark));
 
     /* Text */
@@ -37,15 +37,16 @@
         color: var(--neutral-black);
         background-color: var(--bg-light);
         line-height: 1.6rem;
+        margin: 0;
     }
 
     section {
-        margin: 0 2rem;
+        margin: 0 5rem;
     }
 
     /* - Headings - */
     h1, h2, h3, h4, h5, h6 {
-        color: var(--primary-dark);
+        color: var(--primary);
         font-weight: 800;
     }
 
