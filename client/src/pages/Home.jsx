@@ -20,6 +20,21 @@ export default function Home() {
 
             <div className="features">
                 <h3>F-T Features</h3>
+
+                <div className="feature-grid">
+                    <div className="insights grid-item">
+                        <h4>Financial Insights</h4>
+                    </div>
+                    <div className="budget grid-item">
+                        <h4>Budgeting</h4>
+                    </div>
+                    <div className="security grid-item">
+                        <h4>Personal Security</h4>
+                    </div>
+                    <div className="tracker grid-item">
+                        <h4>Financial Tracker</h4>
+                    </div>
+                </div>
             </div>
         </section>
     );
