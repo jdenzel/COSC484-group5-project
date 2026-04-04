@@ -24,7 +24,7 @@
 
     /* Background */
     --bg-light: var(--neutral-light);
-    --bg-dark: var(var(--neutral-dark));
+    --bg-dark: var(--neutral-dark);
 
     /* Text */
     --font-primary: 'Manrope', sans-serif;
