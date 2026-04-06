@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    color: var(--neutral);
+    background-color: var(--neutral-white);
+    font-weight: 700;
+    border-bottom: 0.1em solid var(--neutral-light);
+    margin-top: 5rem;
+    padding: 2rem 2rem ;
+}
+
+.footer h5 {
+    font-family: var(--font-secondary);
+    color: var(--primary);
+    font-style: italic;
+    margin: 0;
+}
+
+.footer a:link, .footer a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
