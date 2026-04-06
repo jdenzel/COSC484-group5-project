@@ -17,22 +17,31 @@ export default function Home() {
                     <img src={HeroImage} />
                 </div>
             </div>
-
+            
             <div className="features">
                 <h3>F-T Features</h3>
 
                 <div className="feature-grid">
                     <div className="insights grid-item">
                         <h4>Financial Insights</h4>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
+
                     </div>
                     <div className="budget grid-item">
                         <h4>Budgeting</h4>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
                     </div>
                     <div className="security grid-item">
                         <h4>Personal Security</h4>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
                     </div>
                     <div className="tracker grid-item">
                         <h4>Financial Tracker</h4>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        </p>
                     </div>
                 </div>
             </div>

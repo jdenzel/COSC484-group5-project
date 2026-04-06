@@ -48,10 +48,13 @@
     height: auto;
 }
 
+.features {
+    padding: 0 10rem;
+}
+
 .feature-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
 
@@ -59,7 +62,6 @@
     background-color: var(--neutral-white);
     border-radius: 1rem;
     padding: 1rem;
-    /* border: 2px solid var(--primary-dark); */
 }
 
 /* --- Responsive ---  */

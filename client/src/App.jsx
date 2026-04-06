@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Navbar from './components/Navbar/Navbar'
 import Dashboard from './pages/Dashboard'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }
