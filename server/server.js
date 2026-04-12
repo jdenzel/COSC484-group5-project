@@ -19,7 +19,6 @@ const client = new MongoClient(uri, {
 });
 
 let db;
-let usersCollection;
 
 async function run() {
   try {
