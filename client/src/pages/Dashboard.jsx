@@ -23,7 +23,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <h1>Dashboard</h1>
 
-        // Top section with balance, income, expenses
+      {/* Top cards that show Balance, Income, and Expenses */}
       <div className="cards">
         <div className="card">
           <h3>Balance</h3>
@@ -41,7 +41,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* TRANSACTIONS */}
+      {/* Transaction table */}
       <div className="transactions">
         <h2>Recent Transactions</h2>
 
