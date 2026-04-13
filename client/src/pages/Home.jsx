@@ -19,7 +19,7 @@ export default function Home() {
             </div>
             
             <div className="features">
-                <h3>F-T Features</h3>
+                <h3>Mo-Features</h3>
 
                 <div className="feature-grid">
                     <div className="insights grid-item">
