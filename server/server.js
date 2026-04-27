@@ -5,6 +5,8 @@ const express = require("express");
 
 const cors = require('cors')
 
+const mongoose = require("mongoose");
+
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -13,29 +15,9 @@ app.use(cors());
 
 const uri = process.env.MONGO_URI;
 
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
-
-let db;
-let usersCollection;
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-
-    db = client.db("finance-tracker");
-
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!",
-    );
+mongoose.connect(uri)
+  .then(() => {
+    console.log("Successfully connected to MongoDB via Mongoose!");
 
     const userRouter = require("./Routes/users");
     app.use("/users", userRouter);
@@ -54,8 +36,6 @@ async function run() {
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
-  } catch (err) {
-    console.error(err);
-  }
-}
-run().catch(console.dir);
+  }).catch((err) => {
+    console.error(err)
+  });
