@@ -74,7 +74,7 @@ export default function Register() {
                         <button type="submit" className="btn btn-secondary" >
                             Register
                         </button>
-                        {error && <p style={{ color: "red" }}>{error}</p>}
+                        {error && <p className="error">{error}</p>}
                     </form>
                 </div>
                 <div className="register-img-container">

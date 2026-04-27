@@ -31,9 +31,6 @@ router.post("/login", async (req, res) => {
     try {
         const { username, password } = req.body
         const existingUser = await User.findOne({ username });
-        const secret = process.env.JWT_SECRET;
-        const token = jwt.sign({ _id: existingUser._id }, secret, { expiresIn: "1h" });
-
         if (!existingUser) {
             return res.status(401).json({ message: "User not found" });
         }
@@ -43,6 +40,8 @@ router.post("/login", async (req, res) => {
         if (!validPassword) {
             return res.status(401).json({ message: "Invalid password" });
         }
+
+        const token = jwt.sign({ id: existingUser._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
         res.json({ token, user: { id: existingUser._id, username: existingUser.username } });
 

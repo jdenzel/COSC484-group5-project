@@ -1,55 +1,59 @@
+import { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./styles/Login.css";
 
 export default function Login() {
+
+    const [loginData, setLoginData] = useState({ username: "", password: "" })
+    const [error, setError] = useState("");
+
     const navigate = useNavigate();
 
+    const handleChange = (e) => {
+        setLoginData({ ...loginData, [e.target.name]: e.target.value })
+    }
+
     const handleLogin = async (e) => {
-        e.preventDefault(); // stop refresh
-        //test until database is linked and usable. code below is for DB integration
-        navigate('/dashboard');
+        e.preventDefault();
 
-        // //will need to check backend for form data match
-        // //create obj with form data
-        // const formData = new FormData(e.target);
-        // const data = Object.fromEntries(formData);
+        try {
+            const response = await axios.post("http://localhost:3000/auth/login", {
+                username: loginData.username,
+                password: loginData.password
+            })
 
-        // //send data to the backend and wait for response for match
-        // const response = await fetch('http://localhost:5000/api/login', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // });
+            if (response.status === 200) {
+                localStorage.setItem("token", response.data.token);
+                navigate("/dashboard");
+            }
 
-        // //if response is match say success and go to dashboard if not tell user to try again
-        // if (response.ok){
-        //     console.log("Success! Redirecting to Dashboard...");
-        //     navigate('/dashboard');
-        // }
-        // else {
-        //     alert("Login failed. Please try again with different credentials.");
-        // }
+        } catch (error) {
+            console.error(error);
+            setError(error.response.data.message);
+        }
 
     };
 
     return (
         <section id="login-page">
             <div id="logInText">
-                <h1>Log In</h1>           
+                <h1>Log In</h1>
             </div>
             <form onSubmit={handleLogin}>
                 <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" name="email" required />
+                    <label htmlFor="username">Username</label>
+                    <input type="text" id="username" name="username" onChange={handleChange} required />
                 </div>
 
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" name="password" required />
+                    <input type="password" id="password" name="password" onChange={handleChange} required />
                 </div>
 
-                <button type="submit" className="btn-primary">Sign In</button>
-            </form>            
+                <button type="submit" className="btn btn-secondary">Sign In</button>
+                {error && <p className="error">{error}</p>}
+            </form>
         </section>
     );
 }
