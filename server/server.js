@@ -15,7 +15,7 @@ app.use(cors());
 
 const uri = process.env.MONGO_URI;
 
-mongoose.connect(uri)
+mongoose.connect(uri, { dbName: "finance-tracker" })
   .then(() => {
     console.log("Successfully connected to MongoDB via Mongoose!");
 
@@ -31,8 +31,8 @@ mongoose.connect(uri)
     const recurringTransactionRouter = require("./Routes/recurringTransactions");
     app.use("/recurringTransactions", recurringTransactionRouter);
 
-    app.locals.db = db;
-
+    const authRouter = require("./Routes/auth");
+    app.use("/auth", authRouter);
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
