@@ -16,7 +16,8 @@
     margin: 0;
 }
 
-.navbar a:link, .navbar a:visited {
+.navbar a:link,
+.navbar a:visited {
     text-decoration: none;
     color: inherit;
 }
@@ -34,4 +35,20 @@
     align-items: center;
     gap: 2rem;
     color: var(--primary-dark)
+}
+
+.logout-btn {
+    color: var(--error);
+    background: var(--warning-bg);
+    border: none;
+    padding: .7rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logout-btn:hover {
+    color: var(--warning-bg);
+    background: var(--error);
 }
