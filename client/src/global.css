@@ -1,26 +1,29 @@
 :root {
     /* Primary Color */
-    --primary-white:oklch(92% 0.02 160);
-    --primary-light:oklch(87.1% 0.072 145);
-    --primary-light-mid:oklch(0.9027 0.103 139.1);
-    --primary:oklch(54.1% 0.141 145);
-    --primary-2:oklch(45% 0.08 160);
-    --primary-dark-mid:oklch(35.2% 0.108 145);
-    --primary-dark:oklch(27.4% 0.085 145);
-    --primary-black:oklch(20% 0.04 160);
+    --primary-white: oklch(92% 0.02 160);
+    --primary-light: oklch(87.1% 0.072 145);
+    --primary-light-mid: oklch(0.9027 0.103 139.1);
+    --primary: oklch(54.1% 0.141 145);
+    --primary-2: oklch(45% 0.08 160);
+    --primary-dark-mid: oklch(35.2% 0.108 145);
+    --primary-dark: oklch(27.4% 0.085 145);
+    --primary-black: oklch(20% 0.04 160);
 
     /* Secondary Color */
-    --secondary-light:oklch(92% 0.02 20);
-    --secondary:oklch(45% 0.10 20);
-    --secondary-dark:oklch(20% 0.04 20);
+    --secondary-light: oklch(92% 0.02 20);
+    --secondary: oklch(45% 0.10 20);
+    --secondary-dark: oklch(20% 0.04 20);
 
+    /* Error / Warning Color */
+    --warning-bg: oklch(0.7861 0.105 21.68);
+    --error: oklch(0.382 0.1684 26.09);
 
     /* Neutral Color */
-    --neutral-white:oklch(100% 0 0);
-    --neutral-light:oklch(96.8% 0.005 220);
-    --neutral:oklch(55.6% 0.025 220);
-    --neutral-dark:oklch(22.4% 0.015 220);
-    --neutral-black:oklch(15.2% 0.010 220);
+    --neutral-white: oklch(100% 0 0);
+    --neutral-light: oklch(96.8% 0.005 220);
+    --neutral: oklch(55.6% 0.025 220);
+    --neutral-dark: oklch(22.4% 0.015 220);
+    --neutral-black: oklch(15.2% 0.010 220);
 
     /* Background */
     --bg-light: var(--neutral-light);
@@ -45,7 +48,12 @@
     }
 
     /* - Headings - */
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         color: var(--primary);
         font-weight: 800;
     }
@@ -133,13 +141,13 @@
         border: 1px solid oklch(100% 0.00011 271.152 / 0.2);
     }
 
-    .btn-outline:hover { 
+    .btn-outline:hover {
         background: oklch(100% 0.00011 271.152 / 0.2);
     }
+
     @media screen and (max-width: 768px) {
         section {
             margin: 0 1rem;
         }
     }
 }
-
