@@ -27,4 +27,29 @@ router.post("/register", async (req, res) => {
     }
 })
 
+router.post("/login", async (req, res) => {
+    try {
+        const { username, password } = req.body
+        const existingUser = await User.findOne({ username });
+        const secret = process.env.JWT_SECRET;
+        const token = jwt.sign({ _id: existingUser._id }, secret, { expiresIn: "1h" });
+
+        if (!existingUser) {
+            return res.status(401).json({ message: "User not found" });
+        }
+
+        const validPassword = await bcrypt.compare(password, existingUser.passwordHash);
+
+        if (!validPassword) {
+            return res.status(401).json({ message: "Invalid password" });
+        }
+
+        res.json({ token, user: { id: existingUser._id, username: existingUser.username } });
+
+    } catch (error) {
+        console.error("Log in Error");
+        res.status(500).json({ message: "Server error on Login" });
+    }
+})
+
 module.exports = router;
