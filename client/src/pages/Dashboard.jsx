@@ -1,72 +1,48 @@
-import React from "react";
-import "./styles/Dashboard.css";
+import { useEffect, useState } from "react";
 
-const Dashboard = () => {
-  // place holders for now
-  const transactions = [
-    { id: 1, description: "Chipotle", amount: 12, type: "expense" },
-    { id: 2, description: "Paycheck", amount: 1200, type: "income" },
-    { id: 3, description: "Netflix", amount: 15, type: "expense" }
-  ];
+export default function Dashboard() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const income = transactions
-    .filter(t => t.type === "income")
-    .reduce((sum, t) => sum + t.amount, 0);
+  const baseURL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
 
-  const expenses = transactions
-    .filter(t => t.type === "expense")
-    .reduce((sum, t) => sum + t.amount, 0);
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const response = await fetch(`${baseURL}/users`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
 
-  const balance = income - expenses;
+        const data = await response.json();
+        setUsers(data);
+      } catch (err) {
+        setError(err.message);
+        console.error("fetch failed", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getUsers();
+  }, []);
+
+  if (loading) return <p>Loading team members...</p>;
+  if (error) return <p className="error">Error: {error}</p>;
 
   return (
-    <div className="dashboard">
+    <div>
       <h1>Dashboard</h1>
 
-      {/* Top cards that show Balance, Income, and Expenses */}
-      <div className="cards">
-        <div className="card">
-          <h3>Balance</h3>
-          <p>${balance}</p>
-        </div>
-
-        <div className="card">
-          <h3>Income</h3>
-          <p>${income}</p>
-        </div>
-
-        <div className="card">
-          <h3>Expenses</h3>
-          <p>${expenses}</p>
-        </div>
-      </div>
-
-      {/* Transaction table */}
-      <div className="transactions">
-        <h2>Recent Transactions</h2>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {transactions.map((t) => (
-              <tr key={t.id}>
-                <td>{t.description}</td>
-                <td>${t.amount}</td>
-                <td>{t.type}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <h3>Current users:</h3>
+      <ul>
+        {users.map((user) => (
+          <li key={user._id}>
+            <strong>{user.firstname} {user.lastname}</strong>
+          </li>
+        ))}
+      </ul>
     </div>
   );
-};
-
-export default Dashboard;
+}

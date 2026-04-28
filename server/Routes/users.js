@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Get All
 router.get("/", async (req, res) => {
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 // Get One
-router.get("/:id", async (req, res) => {});
+router.get("/:id", async (req, res) => { });
 
 // Create One
 router.post("/", async (req, res) => {
@@ -48,9 +48,9 @@ router.post("/", async (req, res) => {
 });
 
 // Update One
-router.patch("/:id", async (req, res) => {});
+router.patch("/:id", async (req, res) => { });
 
 // Delete One
-router.delete("/:id", async (req, res) => {});
+router.delete("/:id", async (req, res) => { });
 
 module.exports = router;
