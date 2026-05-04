@@ -1,0 +1,131 @@
+/* ─── Widget Shell ──────────────────────────────────────────────────────────
+   --accent   per-widget accent color, set via style attribute in WidgetShell
+   --widget-w widget width
+   --widget-h widget height
+   --z        z-index for stacking
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.widget-shell {
+  position: absolute;
+  width: var(--widget-w);
+  z-index: var(--z);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #22492f, #163320);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px color-mix(in srgb, var(--accent) 12%, transparent);
+  overflow: hidden;
+  user-select: none;
+  font-family: Arial, sans-serif;
+}
+
+/* ── Title bar ─────────────────────────────────────────────────────────────── */
+
+.widget-shell__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+    transparent 100%
+  );
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  cursor: grab;
+}
+
+.widget-shell__titlebar:active {
+  cursor: grabbing;
+}
+
+.widget-shell__title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.widget-shell__icon {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.widget-shell__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e8f5e9;
+  letter-spacing: 0.02em;
+}
+
+/* ── Control buttons ───────────────────────────────────────────────────────── */
+
+.widget-shell__controls {
+  display: flex;
+  gap: 6px;
+}
+
+.widget-shell__btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widget-shell__btn--minimize {
+  background: #fbbf24;
+  color: #78350f;
+}
+
+.widget-shell__btn--close {
+  background: #f87171;
+  color: #7f1d1d;
+}
+
+.widget-shell__btn:hover {
+  opacity: 0.85;
+}
+
+/* ── Content area ──────────────────────────────────────────────────────────── */
+
+.widget-shell__content {
+  padding: 14px 16px;
+  height: calc(var(--widget-h) - 44px);
+  overflow-y: auto;
+}
+
+/* ── Placeholder (used by empty widgets) ───────────────────────────────────── */
+
+.widget-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.widget-placeholder__icon {
+  font-size: 28px;
+  opacity: 0.3;
+  color: var(--accent, #4caf50);
+}
+
+.widget-placeholder__label {
+  font-size: 13px;
+  margin: 0;
+  color: #4a7c59;
+}
+
+.widget-placeholder__hint {
+  font-size: 11px;
+  margin: 0;
+  color: #2e5c3a;
+}
