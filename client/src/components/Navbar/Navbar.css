@@ -1,0 +1,54 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    color: var(--neutral);
+    background-color: var(--neutral-white);
+    font-weight: 700;
+    border-bottom: 0.1em solid var(--neutral-light);
+    padding: 2rem 2rem;
+}
+
+.navbar h5 {
+    font-family: var(--font-secondary);
+    color: var(--primary);
+    font-style: italic;
+    margin: 0;
+}
+
+.navbar a:link,
+.navbar a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-links {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navbar-menu {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    color: var(--primary-dark)
+}
+
+.logout-btn {
+    color: var(--error);
+    background: var(--warning-bg);
+    border: none;
+    padding: .7rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logout-btn:hover {
+    color: var(--warning-bg);
+    background: var(--error);
+}
